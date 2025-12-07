@@ -33,6 +33,8 @@ main :: proc() {
         values: [12]int
         index := 0
         for i := 12; i > 0; i-=1 {
+            // Get the largest number that is at least "i" back from the last number
+            // since we always want to end up with at least a 12 digit number.
             largest, largest_index := find_largest(line[index:len(line) - i + 1])
             values[12-i] = largest
             index += largest_index + 1
